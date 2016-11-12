@@ -1,0 +1,35 @@
+<?php
+	header('Content-Type:text/html;charset=utf-8');
+	echo PHP_VERSION.'<br>';
+	class Person{
+		//成员属性
+		private $name; //名字，被private封装
+		private $sex;  //性别，被private封装
+		private $age;
+		//构造函数可以提供访问私有方法
+		function __construct($name,$sex,$age){//注意这里是两个_,__construct
+			$this->name=$name;
+			$this->sex=$sex;
+			$this->age=$age;
+		}
+		function say(){
+			echo "我的名字叫:" .$this->name;//对象指向方法
+		}
+			
+		
+		
+	};
+	//实例化
+	$p1 = new Person("张三", "男", 20);
+	$p2 = new Person("李四", "女", 30);
+	$p3 = new Person("王五", "男", 40);
+
+	// 下面访问$p1对象中的说话方法
+	$p1->say();
+ 
+	// 下面访问$p2对象中的说话方法
+	$p2->say();
+ 
+	// 下面访问$p3对象中的说话方法
+	$p3->say();
+?>
